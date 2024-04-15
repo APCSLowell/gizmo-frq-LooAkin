@@ -8,17 +8,29 @@ public class Gizmo
   {
     return maker;
   }
-  /** Returns true if this Gizmo is electronic, and false
-  * otherwise.
-  */
+  public countElectronicsByMaker( String maker){
+    int count = 0;
+    for(int i = 0; i < purchases.size(); i++){
+      if((purchases.get(i).isElectronic() == true)&&(purchases.get(i).getMaker().equals(maker)))
+        count++;
+    }
+    return count;
+  }
   public boolean isElectronic()
   {
     return isElec;
   }
-  /** Returns true if this Gizmo is equivalent to the Gizmo
-  * object represented by the
-  * parameter, and false otherwise.
-  */
+ public boolean hasAdjacentEqualPair(){
+   if(purchases.size()<2)
+     return false;
+   else{
+     for(int j = 0; j < purchases.size()-1; j++){
+       if(pruchases.get(j).equals(purchases.get(j+1)))
+         return true;
+     }
+   }
+   return false;
+ }
   public boolean equals(Object other)
   {
     boolean sameMaker = maker.equals(((Gizmo)other).getMaker());
