@@ -8,14 +8,7 @@ public class Gizmo
   {
     return maker;
   }
-  public int countElectronicsByMaker(String maker){
-    int count = 0;
-    for(int i = 0; i < purchases.size(); i++){
-      if((purchases.get(i).isElectronic())&&(purchases.get(i).getMaker().equals(maker)))
-        count++;
-    }
-    return count;
-  }
+
   public boolean isElectronic()
   {
     return isElec;
