@@ -8,22 +8,10 @@ public class Gizmo
   {
     return maker;
   }
-
   public boolean isElectronic()
   {
     return isElec;
   }
- public boolean hasAdjacentEqualPair(){
-   if(purchases.size()<2)
-     return false;
-   else{
-     for(int j = 0; j < purchases.size()-1; j++){
-       if(pruchases.get(j).equals(purchases.get(j+1)))
-         return true;
-     }
-   }
-   return false;
- }
   public boolean equals(Object other)
   {
     boolean sameMaker = maker.equals(((Gizmo)other).getMaker());
